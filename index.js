@@ -46,3 +46,11 @@ errors.e500 = function(res, err, defaults) {
 		errors: errors.format(err, defaults)
 	});
 };
+
+// Send a 400 error
+errors.e400 = function(res, err, defaults) {
+	logger.info('400 error response', err, defaults);
+	res.status(400).json({
+		errors: errors.format(err, defaults)
+	});
+};

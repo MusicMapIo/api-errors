@@ -1,6 +1,6 @@
 {
   "name": "api-errors",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "Api error handler, logs and responds with the right format",
   "main": "index.js",
   "scripts": {

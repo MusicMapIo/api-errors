@@ -47,3 +47,8 @@ Formats the given error into an array of the proper format.  Err must be an obje
 #### `e500(res, err[, defaults])`
 
 Sends a 500 level error.  Err can be an instance of an error or an object that implements `message` and `code`.  Defaults is used to set fallback messages if the error object is dynamic and does not implement both message and code.
+
+#### `e400(res, err[, defaults])`
+
+Sends a 400 level error.  This error is for input validation errors.
+
