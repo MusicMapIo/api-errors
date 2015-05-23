@@ -39,18 +39,11 @@ errors.format = function(err, defaults) {
 
 };
 
-// Send a 500 error
-errors.e500 = function(res, err, defaults) {
-	logger.info('500 error response', err, defaults);
-	res.status(500).json({
-		errors: errors.format(err, defaults)
-	});
-};
-
-// Send a 400 error
-errors.e400 = function(res, err, defaults) {
-	logger.info('400 error response', err, defaults);
-	res.status(400).json({
-		errors: errors.format(err, defaults)
-	});
-};
+[400, 404, 500].forEach(function(status) {
+	errors['e' + status] = function(res, err, defaults) {
+		logger.info(status + 'error response', err, defaults);
+		res.status(status).json({
+			errors: errors.format(err, defaults)
+		});
+	};
+});
