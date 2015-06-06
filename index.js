@@ -39,7 +39,7 @@ errors.format = function(err, defaults) {
 
 };
 
-[400, 404, 500].forEach(function(status) {
+[400, 401, 403, 404, 500].forEach(function(status) {
 	errors['e' + status] = function(res, err, defaults) {
 		logger.info(status + 'error response', err, defaults);
 		res.status(status).json({

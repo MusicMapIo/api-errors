@@ -52,3 +52,10 @@ Sends a 500 level error.  Err can be an instance of an error or an object that i
 
 Sends a 400 level error.  This error is for input validation errors.
 
+#### `e401(res, err[, defaults])`
+
+Sends a 401 unauthorized.
+
+#### `e403(res, err[, defaults])`
+
+Sends a 403 forbidden.
