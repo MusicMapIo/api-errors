@@ -41,7 +41,7 @@ errors.format = function(err, defaults) {
 
 [400, 401, 403, 404, 500].forEach(function(status) {
 	errors['e' + status] = function(res, err, defaults) {
-		logger.info(status + 'error response', err, defaults);
+		logger[status >= 500 ? 'error' : 'info'](status + 'error response', err, defaults);
 		res.status(status).json({
 			errors: errors.format(err, defaults)
 		});
